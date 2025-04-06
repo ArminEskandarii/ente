@@ -80,7 +80,7 @@ services:
       - ./museum.yaml:/museum.yaml:ro
       - ./data:/data:ro
 
-  # Resolve "localhost:3200" in the museum container to the minio container.
+  # Resolve "65.109.192.185:3200" in the museum container to the minio container.
   socat:
     image: alpine/socat
     network_mode: service:museum
@@ -169,20 +169,20 @@ s3:
       b2-eu-cen:
          key: $minio_user
          secret: $minio_pass
-         endpoint: localhost:3200
+         endpoint: 65.109.192.185:3200
          region: eu-central-2
          bucket: b2-eu-cen
       wasabi-eu-central-2-v3:
          key: $minio_user
          secret: $minio_pass
-         endpoint: localhost:3200
+         endpoint: 65.109.192.185:3200
          region: eu-central-2
          bucket: wasabi-eu-central-2-v3
          compliance: false
       scw-eu-fr-v3:
          key: $minio_user
          secret: $minio_pass
-         endpoint: localhost:3200
+         endpoint: 65.109.192.185:3200
          region: eu-central-2
          bucket: scw-eu-fr-v3
 EOF
